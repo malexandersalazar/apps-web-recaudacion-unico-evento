@@ -1,5 +1,7 @@
 # Aplicación de Recaudación de Donaciones Monetarias en un Único Evento
 
+![alt text](/images/cover.png "Aplicación de Recaudación de Donaciones Monetarias en un Único Evento")
+
 Una simple aplicación web basada en .NET 6 para la recaudación de donaciones monetarias y registro de asistencias en un único evento.
 
 ## Configuración
@@ -16,6 +18,19 @@ Una simple aplicación web basada en .NET 6 para la recaudación de donaciones m
 ### Usuarios y Roles
 
 Los usuarios y roles se definen en la clase `UniqueFundraisingEvent.Web.SeedIdentity`. Para que las contraseñas sean seguras podemos hacer uso del script [Secure Password Generator](https://github.com/malexandersalazar/tools-python-secure-password-generator).
+
+### Invitados
+
+La importación masiva de invitados se hace a través de un archivo .csv sin cabecera con las columnas `Nombre,Apellido,Correo,Empresa,Cargo`. A continuación unos datos de ejemplo:
+
+```csv
+Denise,Sims,felis.eget.varius@protonmail.com,Odio Associates,Human Resources
+Yoshio,Coleman,sem.mollis@icloud.net,Mollis Dui In Inc.,Tech Support
+Destiny,Mckenzie,mi.enim@icloud.edu,Sed Dui Fusce Industries,Asset Management
+Angela,Sexton,faucibus.lectus@google.couk,Pharetra Sed Corporation,Accounting
+Jasper,Rivera,eu@hotmail.com,Purus Sapien Limited,Media Relations
+Dale,Owen,nec.tellus@protonmail.org,Ultrices Sit PC,Media Relations
+```
 
 ## Requisitos Previos
 
