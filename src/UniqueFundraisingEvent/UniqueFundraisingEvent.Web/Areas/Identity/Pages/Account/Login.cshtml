@@ -1,0 +1,97 @@
+﻿@page
+@model LoginModel
+@inject MetadataSettings metadataSettings
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es" data-layout="topnav">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Iniciar Sesión | @metadataSettings.ApplicationName</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="@metadataSettings.Author" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+
+    <!-- Theme Config Js -->
+    <script src="~/assets/js/hyper-config.js"></script>
+
+    <!-- App css -->
+    <link href="~/assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="~/assets/css/main.css" rel="stylesheet" type="text/css" />
+
+    <!-- Icons css -->
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="authentication-bg position-relative">
+
+    <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5 position-relative">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-4 col-lg-5">
+                    <div class="card bg-transparent shadow-none">
+
+                        <!-- Logo -->
+                        <div class="card-header py-4 text-center">
+                            <a href="index.html">
+                                <span><img src="~/assets/images/logo.png" alt="logo" height="77"></span>
+                            </a>
+                        </div>
+
+                        <div class="card-body p-4">
+
+                            <form method="post">
+
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                <div class="mb-3">
+                                    <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="Usuario" />
+                                    <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="input-group input-group-merge">
+                                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true"  placeholder="Contraseña">
+                                        <div class="input-group-text" data-password="false">
+                                            <span class="password-eye"></span>
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-3 mb-0 d-grid gap-2">
+                                    <button class="btn btn-primary" type="submit"> Ingresar <i class="mdi mdi-login"></i></button>
+                                </div>
+
+                            </form>
+                        </div> <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+
+                </div> <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end page -->
+
+    <footer class="footer footer-alt text-white">
+        © Copyright <script>document.write(new Date().getFullYear())</script> @metadataSettings.Copyright
+    </footer>
+    <!-- Vendor js -->
+    <script src="~/assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="~/assets/js/app.min.js"></script>
+
+    <partial name="_ValidationScriptsPartial" />
+
+</body>
+</html>
